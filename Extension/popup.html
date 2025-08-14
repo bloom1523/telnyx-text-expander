@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <img src="Telnyx icon.png" alt="Telnyx" class="title-icon">
+      Telnyx Text Expander
+    </h1>
+    
+    <div class="snippet-group-section">
+      <h3>Snippet Group Selected</h3>
+      <div class="input-group">
+        <select id="snippet-group-select">
+          <option value="my-snippets">My Snippets</option>
+        </select>
+      </div>
+      <div class="button-group">
+        <button id="rename-group-btn">Rename Snippet Group</button>
+        <button id="delete-group-btn">Delete Snippet Group</button>
+      </div>
+    </div>
+    
+    <div class="last-snippet-section">
+      <h3>Last Snippet</h3>
+      <div class="button-group">
+        <button id="view-last-btn">View</button>
+        <button id="edit-last-btn">Edit</button>
+      </div>
+    </div>
+    
+    <div class="add-template">
+      <h3 id="form-title">Add New Template</h3>
+      <div class="input-group">
+        <label for="add-to-group">Add to Group:</label>
+        <select id="add-to-group-select">
+          <option value="my-snippets">My Snippets</option>
+        </select>
+      </div>
+      <div class="input-group" id="new-group-name-container" style="display: none;">
+        <label for="new-group-name">New Group Name:</label>
+        <input type="text" id="new-group-name" placeholder="e.g., Work Templates">
+      </div>
+      <div class="input-group">
+        <label for="trigger">Trigger:</label>
+        <input type="text" id="trigger" placeholder="e.g., @email">
+      </div>
+      <div class="input-group">
+        <label for="expansion">Expansion:</label>
+        <textarea id="expansion" placeholder="e.g., john@example.com"></textarea>
+      </div>
+      <div class="button-group">
+        <button id="add-btn">Add Template</button>
+        <button id="cancel-btn" style="display: none;">Cancel</button>
+      </div>
+    </div>
+    
+    <div class="templates-list templates-collapsed">
+      <div class="templates-header">
+        <h3>Saved Templates</h3>
+        <div class="expand-buttons">
+          <button id="expand-btn">+</button>
+          <button id="collapse-btn" style="display: none;">-</button>
+        </div>
+      </div>
+      <div class="search-section">
+        <div class="input-group">
+          <label for="search-templates">Search:</label>
+          <input type="text" id="search-templates" placeholder="Type to search triggers and snippets...">
+        </div>
+      </div>
+      <div id="templates-container">
+        <div class="no-templates">No templates saved yet.</div>
+      </div>
+    </div>
+    
+    <div class="import-export-section">
+      <div class="button-group">
+        <button id="import-btn">Import Snippets</button>
+        <button id="export-btn">Export Snippets</button>
+      </div>
+      <input type="file" id="file-input" accept=".csv" style="display: none;">
+    </div>
+    
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

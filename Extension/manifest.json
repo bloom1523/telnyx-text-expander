@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Text Expander",
+  "version": "1.0",
+  "description": "Expand text templates using shortcut keys",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "*://*.zendesk.com/*",
+    "*://*.zdassets.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Text Expander"
+  },
+  "icons": {
+    "16": "T.png",
+    "48": "T.png",
+    "128": "T.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["Sound.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
